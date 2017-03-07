@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<title>注册_华为账号</title>
+		<link rel="stylesheet" type="text/css" href="css/login-reg.css"/>
+	</head>
+	<body>
+		<form action="login.html" onsubmit="return register()">
+			<div class="reg">
+				<div class="head-background">
+					<div class="head_center">
+					  	<a href="index.html" class="main-logo">
+							<img src="img/huaweilogo2.png">
+						</a>
+						<div class="website-name">
+							<b style="font-size: 23px;margin-top: -4px;float: left;">|</b>
+							<b style="font-size: 23px;margin-top: -1px;float: left; margin-left:5px;">华为商城</b>
+						</div>
+					</div>
+				</div>
+				<div class="wp1 relative">
+					<div class="reg-content" id="registerForm">
+						<div class="reg-tab">
+							<a href="" class="tab-phone sel">手机号</a>
+						 	<a href="" class="tab-email">电子邮箱 </a>			
+						</div>
+						<div class="login2 r">已有华为帐号
+							<a href="login.html" class="login-a" title="登录">登录 </a>▶
+						</div>
+						<div class="reg-detail">
+							<h3 class="reg-title">注册华为帐号</h3>
+							<p class="node-intro">
+			                	华为帐号是您用于访问所有华为服务的帐号。使用华为帐号登录后，您将可以使用云服务、
+			                	华为商城、花粉俱乐部、应用市场、EMUI产品、华为网盘和开发者联盟。
+			                </p>
+			                <div class="box-shadow-in"></div> 
+							<div class="node">
+								<div class="node-title">华为帐号</div>
+								<div class="node-intro">输入手机号作为您的华为帐号，用于登录、重设密码、验证身份。</div>
+								<div class="node-des mkcl">
+									<div class="node-input r mkcl">
+										<div class="short r">
+											<div class="dinput">
+												<input type="text" id="username" name="formBean.username" 
+													maxlength="50" tabindex="1" validator="validator11481374419527" 
+													style="z-index: 1;" placeholder="输入手机号" onchange="checkNum(this)">
+											</div>
+										</div>
+										<div class="short">
+											<div class="ddrop" id="input_languageCode">
+												<input type="hidden" id="countryCode" value="0086">
+												<input type="hidden" value="0086">
+												<b class="dptick r"></b>
+												<span>+86(中国)</span>
+											</div>
+										</div>
+									</div>
+									<div class="input-intro">手机号：</div>
+								</div>
+								<div class="node-des mkcl">
+									<div class="node-input r">
+										<div class="short r">
+											<div>
+												<input type="button" class="dbtn2 r" id="getValiCode" 
+													intervaltime="60" value="获取验证码">
+												<span id="msg_getPhoneRandomCode" style="position:relative;top:34px;"></span>
+											</div>
+										</div>
+										<div class="short">
+											<div class="dinput">
+												<input type="text" autocomplete="off" class="verify vam ime-disabled" 
+													id="authCode" style="vertical-align: middle; z-index: 1;" 
+													name="formBean.authCode" maxlength="8" tabindex="3" 
+													validator="validator41481374419528" placeholder="短信验证码" 
+													onchange="checkCode(this)">
+											</div>
+										</div>
+									</div>
+									<div class="input-intro">验证码：</div>
+								</div>
+							</div>
+							<div class="box-shadow-in"></div> 
+							<div class="node">
+								<div class="node-title">设置登录密码</div>
+								<div class="node-intro">密码由8-32位字符组成，需至少包含一个大写字母、一个小写字母和一个数字，建议不与其他密码相同</div>
+								<div class="node-des mkcl">
+									<div class="node-input r">
+										<div class="dinput">
+											<input type="password" autocomplete="off" class="text vam" id="password" 
+												name="formBean.password" maxlength="32" tabindex="4" placeholder="8~32个字符"
+												onchange="checkPswd(this)" validator="validator21481374419527" style="z-index: 1;">
+										</div>
+										<div class="pwd-letter">
+											<span>弱 </span><span> 中 </span><span> 强 </span>
+										</div>
+									</div>
+									<div class="input-intro">密码：</div>
+								</div>
+								<div class="node-des mkcl">
+									<div class="node-input r">
+										<div class="dinput">
+											<input type="password" autocomplete="off" class="text vam"  id="password2"
+												name="checkPassword" maxlength="32" tabindex="5" 
+												validator="validator31481374419528" id="input_label_0" 
+												onchange="checkPswd2(this)" style="z-index: 1;" placeholder="8~32个字符">
+										</div>
+										<span id="msg_checkPassword"></span>
+									</div>
+									<div class="input-intro">确认密码：</div>
+								</div>
+							</div>
+							<div class="box-shadow-in"></div> 
+							<!-- 选择国家开始 -->
+							<div class="node" id="chooseCountry">
+								<div class="regAgrTitle node-title">华为帐号服务条款</div>
+								<div class="node-title">国家/地区</div>
+				   				<div class="foot-selectCountry-margin selectCountry-right">
+				     				<div class="selectedCountry_style">中国</div>
+								</div>					
+								<div id="regXCountry" class="node-intro">您正在注册中国的华为帐号</div>
+							</div>
+							<div class="box-shadow-in" id="chooseCountryShadow"></div> 				
+							<!-- 选择国家结束 -->
+							<div id="agreement">
+								<div class="node">
+									<div class="node-intro">
+										<div class="agrLineH">华为将为您创建唯一的华为帐号，来标识您和提供更优服务，且需搜集和处理以下信息： </div>
+										<div class="agrLineH agrIndent">您所有登录的设备信息，包括：IMEI、IMSI、SN、国家/地区、语言、型号和版本号；</div>
+										<div class="agrLineH agrIndent">您向我们提交的个人信息，包括：手机号、邮件地址、密码、头像、昵称、生日、姓名和性别；</div>
+										<div class="agrLineH">上述数据将会传输并保存至华为全球的服务器。您可通过销户删除所有个人数据。</div><br>
+										<div class="agrLineH">华为帐号用户可以通过手机号或邮件地址搜索到您，并可查看您的公开信息，包括：头像、昵称、城市等。您也可以在华为帐号的设置中关闭。</div><br>
+										<div class="agrLineH">点击“注册”，即表示您同意上述内容及
+											<a href="" class="loginAndRegLink">华为帐号用户协议</a>
+											并确认您已阅读
+											<a href="" class="loginAndRegLink">华为隐私政策</a>。
+										</div>
+									</div>
+								</div>
+								<div class="box-shadow-in"></div>
+							</div>
+							<div class="reg-btn" align="center">
+								<input type="submit" class="btn btn-reg sel" id="btnSubmit" value="立即注册" tabindex="7">
+								<!--<div id="register_msg" class="vam error" style="position:relative;left:30%;"></div>-->
+							</div>
+						</div>
+						<div class="box-shadow"></div>
+					</div>
+				</div>
+				<div class="wp1 ft">
+					<div class="reg-content">
+						<p class="footer">
+							<a id="foot_privacy" href="" class="rule">华为隐私政策</a>
+							<a id="foot_EULA" href="" class="rule">华为帐号用户协议</a>	
+							<a href=""><em style="font-style: normal">|</em> </a>
+							<a href="" style="text-decoration: underline;">常见问题</a>
+						</p>
+						<p class="footer">Copyright&nbsp;@&nbsp;
+							2011-2016&nbsp;&nbsp;华为软件技术有限公司&nbsp;&nbsp;
+							版权所有&nbsp;&nbsp;保留一切权利&nbsp;&nbsp;
+							苏B2-20070200号&nbsp;|&nbsp;苏ICP备09062682号-9</p>	
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+		<script type="text/javascript" src="lib/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="js/reg-login.js"></script>
+	</body>
+</html>

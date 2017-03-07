@@ -1,0 +1,511 @@
+*{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+}
+body {
+    font-size: 12px;
+    font-family: Microsoft Yahei,STHeiti,Simsun,STSong;
+    color: #333;
+    background-color: #f1f1f1;
+}
+body, button, input, select, textarea {
+	/*width: 100%;*/
+	/*height: 100%;*/
+    font: 12px/1.5 Arial, Helvetica, sans-serif;
+}
+
+/*-------------------登录-------------------*/
+/*g customer-header*/
+.login{
+	height: 100%;
+	line-height: 1;
+	background-color: #f8f8f8;
+}
+.g{
+	position: relative;
+	margin: 0 auto;
+	width: 1002px;
+	zoom: 1;
+}
+.customer-header{
+	height: 100px;
+}
+.head_center{
+    /*position: relative;*/
+    margin: 0px auto;
+    width: 998px;
+    height: 67px;
+    /*border: 0px;*/
+}
+.head_center .main-logo{
+    float: left;
+    left: 2px;
+}
+.head_center .main-logo img{
+    margin-top: 6px;
+    margin-left: 4px;
+}
+h1, h2, h3, h4, h5, h6, b{
+    font-size: 100%;
+    font-weight: normal;
+}
+.login_bg_pic{
+    width: 640px;
+    height: 588px;
+    background-repeat: no-repeat;
+    float: left;
+}
+.login-right{
+    width: 358px;
+    float: right;
+}
+.login-area .h{
+    padding: 96px 0 18px 2px;
+}
+.login-area-marginTop{
+    margin-top: -45px;
+}
+.loginTitle{
+    font-family: "Microsoft YaHei" ! important;
+}
+.login-area .h span{
+    font-size: 30px;
+    color: #ea5e00;
+    font-weight: bold;
+}
+.login-form-marginTop {
+	position: relative;
+    margin-top: -20px;
+}
+.ipt{
+	margin: 7px 0;
+	box-sizing: border-box;
+	padding: 10px 14px;
+	width: 280px;
+	height: 38px;
+	font-size: 14px;
+}
+.ipt3{
+	width: 145px;
+}
+.img{
+	position: absolute;
+	top: 110px;
+	left: 144px;
+}
+.authCodeImage{
+	width: 100px;
+}
+.f5{
+	top: 120px;
+	left: 254px;
+}
+div.ipt{
+	margin: 38px 0 0;
+	padding: 0 33px 30px 0;
+	font-size: 12px;
+	border-bottom: 1px solid #d7d7d7;
+}
+div.ipt a{
+	float: right;	
+	color: #000;
+}
+.button-login {
+	margin: 20px 0;
+    width: 280px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Microsoft YaHei" ! important;
+    color: #fff;
+    text-align: center;
+    background-color: rgb(180,7,7);
+    border: none;
+    cursor: pointer;
+}
+
+
+.inptips4{
+    color: #999;
+    line-height: 16px;
+}
+.login-area .login-tips{
+    margin-top: 10px;
+    padding-top: 10px;
+    width: 299px;
+}
+.third_login{
+    float: left;
+    margin-top: 6px;
+    color: #999;
+}
+.login-area .login-tips a{
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff9937;
+}
+.inptips4 a{
+    float: left;
+    padding: 0px 5px 0px 2px;
+    width: 23px;
+    height: 30px;
+    display: block;
+}
+.inptips4 a:nth-of-type(1){
+    background: url("../img/qq23.png") no-repeat;
+}
+.inptips4 a:nth-of-type(2){
+    background: url("../img/alipay23.png") no-repeat;
+}
+.inptips4 a:nth-of-type(3){
+    background: url("../img/weixin23.png") no-repeat;
+}
+
+
+
+
+
+
+.g:after{
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+/*login-foot*/
+.login-foot{
+    border-top: 1px solid #d7d7d7;
+    margin: 50px 150px;
+}
+.wp{
+    margin: 0 auto;
+    width: 1000px;
+}
+.ft{
+    margin: 30px auto;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+.ft p{
+    line-height: 24px;
+}
+.rule{
+    margin-right: 12px;
+    text-decoration: underline;
+}
+.ft p a{
+    font-size: 14px;
+    color: #999;
+}
+address, caption, cite, code, dfn, em, th, var{
+    font-style: normal;
+    font-weight: 400;
+}
+em{
+    font-weight: normal;
+    font-style: normal;
+}
+.foot_em{
+    font-size: 16px;
+}
+.ifaq{
+    padding-left: 15px;
+    /*background-position: -100px 3px;*/
+}
+.ft p a{
+    font-size: 14px;
+    color: #999;
+}
+.login-foot .ifaq{
+    /*background-position: -300px 3px;*/
+}
+
+
+
+/*-------------------注册-------------------*/
+/*head-background*/
+.reg {
+    height: 53px;
+    background-color: rgb(241, 241, 241);
+}
+.head-background {
+    height: 67px;
+    background-color: #333333;
+}
+.website-name {
+    padding-top: 8px;
+    height: 67px;
+    font-size: 20px;
+    font-family: "arial";
+    color: white;
+    line-height: 50px;
+}
+
+/*wp1 relative*/
+.mkcl:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.wp1 {
+    margin: 30px auto;
+    width: 100%;
+}
+.relative {
+    position: relative;
+}
+.reg-content {
+    margin: 0px auto;
+    width: 988px;
+}
+.reg-tab {
+    margin-top: 29px;
+    margin-left: 0px;
+}
+.tab-phone, .tab-email, .agree .tick {
+    background-image: url(../img/main_reg.png);
+    background-repeat: no-repeat;
+}
+.tab-phone {
+    background-position: 0px -100px;
+}
+.reg-tab a {
+    display: inline-block;
+    padding-left: 40px;
+    padding-top: 7px;
+    width: 99px;
+    height: 26px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 16px;
+}
+.tab-phone.sel {
+    background-position: 0 0px;
+}
+.tab-email {
+    background-position: -150px 0px;
+}
+.reg-tab .tab-email {
+    padding-left: 50px;
+}
+.r {
+    float: right;
+}
+.login2 {
+    margin-top: -25px;
+}
+.login-a {
+    color: #d70506;
+    text-decoration: underline;
+}
+.reg-detail {
+    padding: 52px 97px 38px 97px;
+    background-color: #fff;
+}
+.reg-title {
+    font-size: 28px;
+    font-family: "Microsoft Yahei" ! important;
+    color: #000;
+}
+.node-intro {
+    margin-top: 19px;
+    color: #999;
+    line-height: 16px;
+}
+.box-shadow-in {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+.node {
+    margin-top: 42px;
+}
+.node-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+.node-des {
+    margin: 30px 53px 0 0px;
+}
+.input-intro {
+    padding: 10px 0;
+    width: 110px;
+    font-size: 12px;
+    color: #999;
+    text-align: left;
+}
+.node-input {
+    margin-right: 270px;
+    width: 334px;
+}
+.short {
+    width: 163px;
+}
+.dinput {
+    padding: 0 15px;
+    margin-top: 25px;
+    font-size: 12px;
+    color: #ccc;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.node-input .dinput {
+    margin-top: 0;
+    color: #333;
+    border-radius: 0px;
+}
+.dinput input {
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border: medium none;
+}
+.node-input .dinput input {
+    height: 32px;
+    line-height: 32px;
+}
+.ddrop, .dpmenu {
+    padding: 14px;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #ccc;
+    border: 1px solid #c5c5c5;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.ddrop {
+    position: relative;
+    height: 14px;
+    color: #333;
+}
+.node-input .ddrop {
+    margin-top: 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #333;
+    border-radius: 0px;
+}
+.user, .navsign, .tick, .uncheck, .switch, 
+.dptick, .uptick, .uptick_left, .ron, .roff, 
+.btn-yes, .btn-no, .poptips-yes, .poptips-no, 
+.poptips-warn, .eye, .login-checkbox, .add {
+    background-image: url(../img/main.png);
+    background-repeat: no-repeat;
+}
+.dptick {
+    padding: 8px;
+    margin-top: 3px;
+    background-position: 0 -150px;
+}
+.dbtn2 {
+    width: 228px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+.node-input .dbtn2 {
+    width: 163px;
+    height: 34px;
+    line-height: 34px;
+    font-size: 12px;
+    border-radius: 0px;
+}
+.vam {
+    vertical-align: middle;
+}
+.pwd-letter {
+    margin-top: 3px;
+}
+.pwd-letter span {
+    display: block;
+    float: left;
+    margin-left: 1px;
+    width: 80px;
+    color: #aaa;
+    text-align: center;
+    background: #eee;
+}
+.regAgrTitle {
+    margin-bottom: 20px;
+    margin-top: -8px;
+    font-size: 16px;
+}
+.foot-selectCountry-margin {
+    margin-top: -20px;
+}
+.selectCountry-right {
+    float: right;
+}
+.selectedCountry_style {
+    float: right;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+.agrLineH {
+    line-height: 180%;
+    color: #000;
+}
+.agrIndent {
+    text-indent: 2em;
+}
+.loginAndRegLink {
+    color: #00C0F4;
+    text-decoration: underline;
+}
+.reg-btn {
+    margin-top: 38px;
+    text-align: center;
+}
+.reg-btn {
+    border-radius: 0px;
+}
+.btn {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 56px;
+    width: 142px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #cccccc;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    cursor: pointer;
+}
+.btn-reg {
+    margin: 0 auto;
+    width: 279px;
+    height: 45px;
+}
+.reg-btn .btn.sel {
+    color: #fff;
+    background-color: #d70506;
+    border: solid 1px #9c9c9c;
+}
+.box-shadow {
+    padding-bottom: 30px;
+    text-align: center;
+    border-bottom: 1px solid #d7d7d7;
+}
+
+
+
+
+
+

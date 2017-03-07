@@ -1,0 +1,19 @@
+a {
+background : -webkit-linear-gradient(bottom, black, white);
+background : linear-gradient(to top, black, white);
+display : -webkit-box;
+display : -ms-flexbox;
+display : flex
+}
+::-webkit-input-placeholder {
+color : #ccc
+}
+::-moz-placeholder {
+color : #ccc
+}
+:-ms-input-placeholder {
+color : #ccc
+}
+::placeholder {
+color : #ccc
+}

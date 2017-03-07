@@ -1,0 +1,138 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+/*-----------------------第一屏-----------------------*/
+/*西柚*/
+.f_hd{
+	position: absolute;
+	top: 100px;
+	left: 200px;
+}
+/*线*/
+.linebox{
+	position: absolute;
+	top: 60px;
+	right: 100px;
+	cursor: pointer;
+}
+.line{
+	margin: 5px 0;
+	width: 40px;
+	height: 4px;
+	background: white;
+	transition: 0.5s;
+}
+.box{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 250px;
+	line-height: 250px;
+	background-color: rgba(154,205,50,0.9);
+	display: none;
+}
+/*-----------------------第二屏-----------------------*/
+/*tab选项卡*/
+#tabBox{
+	margin: 120px auto;
+	width: 900px;
+	height: 800px;
+}
+ul{
+	list-style: none;
+}
+#tab li,#content li{
+	font-family: arial;
+	font-weight: normal;
+	color: #333;
+}
+#tab li{
+	float: left;
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	border-radius: 0 60px 0 0;
+}
+.currentTab{
+	z-index: 100;
+	position: relative;
+	background-color: rgba(255,255,255,0.8);
+}
+#content{
+	position: relative;
+	width: 800px;
+	height: 350px;
+	text-align: left;
+	background-color: rgba(255,255,255,0.8);
+}
+#content li{
+	padding: 30px 50px;
+	font-size: 20px;
+	line-height: 1.6em;
+	display: none;
+}
+#content li.crtContent{
+	display: block;
+}
+.clearfix:after{
+	visibility: hidden;
+	display: table;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.clearfix{
+	zoom: 1;
+}
+/*三级联动*/
+#content li select{
+	font-family: "微软雅黑";
+	border-radius: 2px;
+}
+/*-----------------------第三屏-----------------------*/
+#move{
+	z-index: 1;
+	position: absolute;
+	top: 150px;
+	left: 200px;
+}
+#move li{
+	float: left;
+	margin: 0 40px;
+	color: #931928;
+	/*background: white;*/
+}
+#moveBox{
+	position: absolute;
+	top: 148px;
+	left: 236px;
+	width: 50px;
+	height: 70px;
+	background: white;
+}
+#btn{
+	position: absolute;
+	top: 100px;
+	left: 180px;
+	width: 30px;
+	height: 30px;
+}
+
+#box32{
+	margin: 50px auto;
+	box-sizing: border-box;
+	padding: 40px;
+	width: 800px;
+	height: 500px;
+	line-height: 1.6em;
+	text-indent: 2em;
+	font-size: 20px;
+	color: #333;
+	text-align: left;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 70px 0;
+}
+
+/*-----------------------第四屏-----------------------*/

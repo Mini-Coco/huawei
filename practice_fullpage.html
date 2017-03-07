@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>西柚</title>
+		<link rel="stylesheet" href="lib/jquery.fullPage.css"/>
+		<link rel="stylesheet" href="css/fullpage.css"/>
+		<script type="text/javascript" src="lib/jquery-1.8.3.js"></script>
+		<script type="text/javascript" src="lib/jquery-ui.js"></script>
+		<script type="text/javascript" src="lib/jquery.fullPage.min.js"></script>
+		<script type="text/javascript" src="lib/waterbubble.min.js"></script>
+		<script type="text/javascript" src="js/fullpage.js"></script>
+		<script>
+			$(function(){
+				$("#fullpage").fullpage({
+					"verticalCentered":true,
+					"resize":true,
+					"css3":true,
+//					"sectionsColor":["#254875","#00ff00","#254587","#695684"],
+					anchors:["page1","page2","page3","page4"],
+					"navigation":true,
+					"navigationPosition":"left",
+					"navigationColor":["#695684","#254875","#00ff00","#254587"],
+					"navigationTooltips":["Hello","One","Two","Bye"],
+					"slidesNavigation":true,
+					"slidesNavPosition":"top",
+//					"loopHorizontal":true,
+					"loopBottom":true,
+					"scrollOverflow":true,
+					"continuousVertical":true
+				});
+				
+				$("#dowebok").waterbubble({
+					"waterColor":"rgb(255,255,255)",
+//					"data":0.25,
+					"radius":50
+				});
+			});
+		</script>
+		<style>
+			.section,.slide{
+				width: 100%;
+				font-size: 50px;
+				font-family: "微软雅黑";
+				font-weight: bold;
+				color: white;
+				text-align: center;
+				background-size: 100%;
+			}
+			.section1{
+				font-size: 60px;
+				font-family: FzLiBian-S02;
+				background-image: url(img/k13.jpg);
+			}
+			.section2{background-image: url(img/k31.jpg);}
+			.section4{background-image: url(img/k32.jpg);}
+			.slide1{background-image: url(img/k11.jpg);}
+			.slide2{background-image: url(img/k5.jpg);}
+			.slide3{background-image: url(img/k12.jpg);}
+			.slide4{background-image: url(img/k41.jpg);}
+			
+			#dowebok{
+				position: absolute;
+				bottom: 50px;
+				left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="fullpage">
+			<div class="section section1">
+				<div class="box">
+					<div>See you.</div>
+				</div>
+				<div class="linebox">
+					<div class="line line1"></div>
+					<div class="line line2"></div>
+					<div class="line line3"></div>
+				</div>
+				<div class="f_hd">西柚</div>
+				<div class="f_main">I want to see you.</div>
+				<canvas id="dowebok"></canvas>
+			</div>
+			<div class="section section2">
+				<div id="tabBox">
+					<ul id="tab" class="clearfix">
+						<li class="currentTab">ONE</li>
+						<li>TWO</li>
+						<li>THREE</li>
+						<li>FOUR</li>
+					</ul>
+					<ul id="content">
+						<li class="crtContent">
+							Welcome to See you!<br /><br />
+							I want to see you.
+						</li>
+						<li>
+							Where R U:<br /><br />
+							Province:<select id="province"><option>--请选择--</option></select>
+							<br />
+							City:<select id="city"><option>--请选择--</option></select>
+							<br />
+							Country:<select id="country"><option>--请选择--</option></select>
+						</li>
+						<li>
+							U should know:<br /><br />
+							Life isn't about waiting for the storm to pass.<br />
+							it's about learning to dance in the rain.<br />
+							人生不是坐等暴风雨过去，而是学会在雨中起舞。<br /><br />
+							Because the things you're scared of are usually the most worthwhile.<br />
+							每天都尝试去一件你害怕的事情，因为，你所害怕的事情，往往是最值得的。 
+						</li>
+						<li>
+							I want to see you.I want to see you.I want to see you.
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="section section3">
+				<div class="slide slide1">
+					<button id="btn">></button>
+					<div id="moveBox"></div>
+					<ul id="move">
+						<li>H</li>
+						<li>E</li>
+						<li>L</li>
+						<li>L</li>
+						<li>O</li>
+					</ul>
+				</div>
+				<div class="slide slide2">
+					<div id="box32">
+						I don't know what I do now is right, those are wrong,
+						and when I finally die then I know these. So what  I can do 
+						now is to try to do everything well, and then wait to die .
+						Sometimes I can be very happy to talk to everyone, can be very
+						presumptuous, but no one knows, it is but very deliberatelycamouflage,
+						camouflage; I can make him very happy very happy, but couldn't find the 
+						source of happiness, just giggle.<br /><br />
+						【我不知道我现在做的哪些是对的,那些是错的,而当我终于老死的时候我才知道这些.
+						所以我现在所能做的就是尽力做好每一件事,然后等待着老死.有时候我可以很开心的和每个人说话,
+						可以很放肆的,可是却没有人知道,那不外是伪装,很刻意的伪装;我可以让自己很快乐很快乐,
+						可是却找不到快乐的源头,只是傻笑.】
+					</div>
+				</div>
+				<div class="slide slide3">Nothing~</div>
+				<div class="slide slide4">Nothing~</div>
+			</div>
+			<div class="section section4">BYE~</div>
+		</div>
+	</body>
+</html>

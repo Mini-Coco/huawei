@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>购物车</title>
+		<script type="text/javascript" src="../../lib/jquery-1.8.3.js"></script>
+
+		<style type="text/css">
+			ul {
+				list-style: none;
+			}
+			
+			.Products {
+				width: 200px;
+				height: 225px;
+				border: 5px dashed #1E90FF;
+				position: relative;
+				text-align: center;
+				float: left;
+				margin-left: 10px;
+			}
+			
+			.proStyle {
+				color: #333;
+				font-size: 14px;
+				margin: 0 10px;
+			}
+			
+			figure img {
+				width: 80px;
+				height: 80px;
+			}
+			
+			.Products>a {
+				position: absolute;
+				bottom: 5px;
+				left: 50%;
+				display: inline-block;
+				text-decoration: none;
+				width: 90px;
+				font-size: 12px;
+				height: 20px;
+				line-height: 20px;
+				border-radius: 5px;
+				background-color: #DC143C;
+				color: white;
+			}
+			
+			.Products>a:hover {
+				background-color: #1E90FF;
+			}
+			
+			.name,
+			.price {
+				color: coral;
+				font-size: 12px;
+			}
+			
+			#cart {
+				width: 550px;
+				position: absolute;
+				right: 10px;
+				top: 10px;
+				border: 1px solid;
+				overflow: hidden;
+			}
+			
+			#cart>.cartList>.cartList-ul>.cartList-box {
+				margin-right: 10px;
+				width: 540px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				border: 1px solid #dedede;
+				position: relative;
+			}
+			
+			#cart>.cartList>.cartList-ul>.cartList-box img {
+				width: 40px;
+				height: 40px;
+				float: left;
+				margin-top: 5px;
+				margin-left: 5px;
+			}
+			
+			.cartList-box a {
+				text-decoration: none;
+				color: white;
+				font-size: 15px;
+				display: inline-block;
+				background-color: black;
+				width: 17px;
+				height: 17px;
+				position: absolute;
+				top: 17px;
+				right: 60px;
+			}
+			
+			.cartList-box a:hover {
+				background-color: #DC143C;
+				color: white;
+			}
+			
+			.all {
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+				background-color: #aeaeae;
+			}
+			
+			.CB-name {
+				color: #FF7F50;
+				font-size: 14px;
+				margin: 0 10px;
+				font-weight: bolder;
+				float: left;
+			}
+			
+			.CD-gold {
+				color: #DC143C;
+			}
+			
+			.tips {
+				text-align: center;
+				padding: 10px 0;
+			}
+		</style>
+
+		<script type="text/javascript">
+			var data = { // 声明一个data变量作为数据库使用
+				src: ["../img/1.jpg", "../img/2.jpg"],
+				name: ["猫", "怪兽"],
+				gold: [30, 799]
+			}
+			var proAllNum = new Array() //声明一个数组变量				//声明一个数组变量来存放每种商品的数量
+			var cartNum = 0; //声明一个整数变量来记录商品数量
+			var goldall = 0; //声明一个整数变量记录购物车商品一共需要多少金钱
+
+			/*---------------------初始变量定义完毕--------------------------*/
+
+			$(function() {
+				$(".prolist").on("click", "a.add", function() { //给商品容器里满足Class是add条件的a标签添加点击事件
+					var proIndex = $(this).attr("index"); //获取被点击商品的Index box-?
+					var sIndex = proIndex.replace(/box-/, ""); //将Index里面的字母和横线替换为"",此时sIndex的值是字符串类型
+					var index = parseInt(sIndex) //改变sIndex的类型被转换为整数型, *Jquery对象无法直接使用JS里的Number()进行转换
+					cartNum = 0; //初始化商品总数量
+					goldall = 0; //初始化商品总金额
+
+					if(proAllNum[index] >=1) {		//判断购物车是否存在此类型商品,如果存在就设置商品数量+1 如果不存在就创建该类型商品
+						proAllNum[index] += 1  //存在时设置商品的数量+1
+						$("#" + index + "-CD-num").text(proAllNum[index]) //修改商品数量元素的值
+					} else {
+						$(".tips").hide() //隐藏没有商品的提示
+
+						proAllNum[index] = 1 //设置该商品类型目前在购物车数量为1
+
+						$(".cartList-ul").append("<li class='cartList-box' ></li>"); //创建一个新的商品类型
+						$(".cartList-ul>li:last").append("<img src='" + data.src[index] + "' />"); //获取商品图片的src地址;
+						$(".cartList-ul>li:last").append("<span class='CB-name' >" + data.name[index] + "</span>"); //从data获取商品的名称,创建对应元素
+						$(".cartList-ul>li:last").append("<b class='CD-gold' >" + data.gold[index] + "</b>") //从data获取商品单价 并创建对应元素
+						$(".cartList-ul>li:last").append("×") // 乘号
+						$(".cartList-ul>li:last").append("<strong id='" + index + "-CD-num' class='CD-num' >" + proAllNum[index] + "</strong>") //创建商品的数量
+						$(".cartList-ul>li:last").append("<a title='删除' index='box-"+index+"' id='" + index + "-Del' href='javascript:;'>×</a>"); //创建删除按钮index属型记得用index变量设置
+					}
+
+					$.each(proAllNum, function(index) { //遍历计算商品的总数和总价
+						cartNum += proAllNum[index] //计算商品总数量
+						goldall += proAllNum[index] * data.gold[index] //计算商品总价值
+					});
+
+					$("#cartNum").text(cartNum); //填写商品总数
+					$("#goldall").text(goldall); //填写商品总价
+				})
+
+				$(".cartList").delegate("a", "click", function() {
+					var proIndex = $(this).attr("index"); //获取被点击商品的Index box-?
+					var sIndex = proIndex.replace(/box-/, ""); //将Index里面的字母和横线替换为"",此时sIndex的值是字符串类型
+					var index = parseInt(sIndex) //改变sIndex的类型被转换为整数型, *Jquery对象无法直接使用JS里的Number()进行转换
+					var ulElemLen = $(".cartList-ul>li").length //购物车商品类型的数量
+					
+					
+					var del = $(this).parent()		//获取要被删除的元素
+
+					
+
+					cartNum -= proAllNum[index] //减去被删除商品的数量
+					goldall -= proAllNum[index] * data.gold[index] //减去被删除商品的金额
+					
+					proAllNum[index] = 0; //初始化被删除商品的值
+					
+					$("#cartNum").text(cartNum); //重新给商品总数赋值
+					$("#goldall").text(goldall); //重新给商品总价赋值
+					del.remove()
+					
+					
+					
+					if (ulElemLen == 1) {			//判断购物车列表是否还有闪购
+						$(".tips").show()			//如果没有则显示提示窗口
+					}
+					
+				})
+
+			})
+		</script>
+
+	</head>
+
+	<body>
+		<div class="prolist">
+			<!--商品列表容器-->
+			<div class="Products">
+				<figure>
+					<img src="../img/1.jpg" />
+
+					<figcaption>
+						<span class="proStyle">商品名称</span><br />
+						<b class="name">普通的猫</b> <br /><br />
+						<span class="proStyle">价格</span><br />
+						<b class="price">$30</b> <br />
+					</figcaption>
+				</figure>
+
+				<a index="box-0" class="add" href="javascript:;">加入购物车</a>
+				<!--index=1 是一个自定义属性,没有任何实际功能,用来标记商品的类别-->
+			</div>
+
+			<div class="Products">
+				<a index="box-1" class="add" href="javascript:;">加入购物车</a>
+				<figure>
+					<img src="../img/2.jpg" />
+
+					<figcaption>
+						<span class="proStyle">商品名称</span><br />
+						<b class="name">小怪兽</b> <br /><br />
+						<span class="proStyle">价格</span><br />
+						<b class="price">$300</b> <br />
+					</figcaption>
+				</figure>
+
+			</div>
+		</div>
+
+		<div id="cart">
+			<div class="tips" style="display: block;">
+				当前购物车是空的
+			</div>
+
+			<div class="cartList">
+				<ul class="cartList-ul">
+
+				</ul>
+			</div>
+
+			<div class="all">
+				共<b id="cartNum"></b>件商品,一共<b id="goldall"></b>元
+			</div>
+		</div>
+
+	</body>
+
+</html>
